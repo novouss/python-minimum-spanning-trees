@@ -41,7 +41,7 @@ class Graph:
         self.graph = sorted(self.graph, key = lambda item: item[2]) 
         
         # Default initialization
-        result = [] # Edges with the shortes weight
+        result = [] # Edges with the shortest weight
         parent = []
         rank = []
         index = 0  # Used for traversing graph
@@ -50,10 +50,10 @@ class Graph:
             parent.append(node)
             rank.append(0)
 
-        # Repeat unti there are vertex-1 edges in the resulting spanning tree.
+        # Repeat until there are vertex-1 edges in the resulting spanning tree.
         while len(result) != self.vertices - 1:
 
-            #
+            # [source, destination, weight]
             src, dst, wt = self.graph[index]
             index = index + 1
 
@@ -68,4 +68,4 @@ class Graph:
             # Else, discard it.
 
         print("Minimum Spanning Tree:", self.minimumSpanningTree(result))
-            
+        
